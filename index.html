@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweet — Müzik zevkinle eşleş</title>
+<meta name="description" content="Sweet: müzik zevkinle eşleştiğin tanışma uygulaması. Davet edildin — aramıza katıl.">
+<style>
+  :root { --bg:#131313; --surface:#1e1e1e; --primary:#53E076; --secondary:#FFB1C4; --text:#f2f2f2; --muted:#a5a5a5; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:var(--bg); color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .card {
+    background:var(--surface); border-radius:24px; padding:40px 32px;
+    max-width:420px; width:100%; text-align:center;
+    box-shadow:0 8px 40px rgba(0,0,0,.5);
+  }
+  .logo { font-size:56px; line-height:1; }
+  h1 { font-size:28px; margin:16px 0 4px; }
+  h1 .accent { color:var(--primary); }
+  .tagline { color:var(--secondary); font-size:15px; margin-bottom:20px; }
+  p.body { color:var(--muted); font-size:15px; line-height:1.6; margin-bottom:28px; }
+  .cta {
+    display:block; background:var(--primary); color:#0a0a0a; text-decoration:none;
+    font-weight:700; font-size:17px; padding:16px; border-radius:999px; margin-bottom:12px;
+  }
+  .cta.secondary { background:transparent; color:var(--primary); border:1px solid var(--primary); }
+  .note { color:var(--muted); font-size:12px; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">🎵💚</div>
+  <h1>Sweet<span class="accent">'e davetlisin</span></h1>
+  <div class="tagline">Müzik zevkinle eşleş</div>
+  <p class="body">
+    Bir arkadaşın seni Sweet'e davet etti. Dinlediğin müzik kim olduğunu anlatır —
+    Sweet, zevk profilin üzerinden sana en çok benzeyen insanlarla tanıştırır.
+  </p>
+  <a class="cta" id="open-app" href="sweet://u/">Uygulaman varsa aç</a>
+  <a class="cta secondary" href="#" onclick="return false;">Google Play'de yakında</a>
+  <div class="note" id="ref-note"></div>
+</div>
+<script>
+(function () {
+  // Ref kodu iki formattan da oku: /i/<kod> (GH Pages 404 yönlendirmesi) veya ?i=<kod>.
+  var m = location.pathname.match(/\/i\/([a-z0-9]{4,16})/);
+  var ref = (m && m[1]) || new URLSearchParams(location.search).get("i");
+  if (!ref || !/^[a-z0-9]{4,16}$/.test(ref)) return;
+  document.getElementById("ref-note").textContent = "Davet kodun: " + ref;
+  // Tıklama ataması: anon rolü yalnız geçerli (FK) ref koduna INSERT edebilir
+  // (invite_clicks RLS, 0002; pgTAP 007). Best-effort — hata yutulur.
+  var SUPABASE_URL = "https://fxzcivzywkacfgqvysqc.supabase.co";
+  var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4emNpdnp5d2thY2ZncXZ5c3FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxODk5OTAsImV4cCI6MjA5ODc2NTk5MH0.2azbkRnRD9EGI8t1ePPBpIAID1KnfpuMtJKr-KLWQoY";
+  try {
+    fetch(SUPABASE_URL + "/rest/v1/invite_clicks", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({ ref_code: ref })
+    }).catch(function () {});
+  } catch (e) { /* yut */ }
+})();
+</script>
+</body>
+</html>
