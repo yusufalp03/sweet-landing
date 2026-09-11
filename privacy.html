@@ -45,7 +45,7 @@ sağlamak — şikayet/engelleme dahil (meşru menfaat), bildirim göndermek
 işlenir. Konum verisi yalnızca açık izninizle işlenir.</p>
 
 <h2>3. Verilerin paylaşımı</h2>
-<p>Profiliniz (fotoğraf, ad/kullanıcı adı, yaş, il, müzik zevki ve profil
+<p>Profiliniz (fotoğraf, ad/kullanıcı adı, yaş, il, ilgi alanları ve profil
 alanları) uygulamanın diğer kullanıcılarına eşleştirme amacıyla gösterilir.
 Sosyal medya kullanıcı adlarınız seçtiğiniz görünürlük ayarına göre
 (yalnız eşleşmeler / herkes) gösterilir. Verileriniz üçüncü kişilere
@@ -53,20 +53,34 @@ satılmaz. Barındırma ve altyapı için şu hizmet sağlayıcılar kullanılı
 Supabase (veritabanı, kimlik doğrulama ve dosya depolama), Google Firebase
 (bildirim, çökme kaydı, anonim analitik), Sightengine (profil fotoğraflarının
 uygunsuz içerik taraması — yüklediğiniz profil fotoğrafı tarama için bu
-sağlayıcıya gönderilir; sohbet görselleri gönderilmez), Anthropic (müzik
-kişiliği özeti üretimi — yalnızca tür/sanatçı listeleri gönderilir, kimlik
-bilgisi gönderilmez).</p>
-<p><strong>Fotoğraflara erişim hakkında:</strong> profil fotoğraflarınız ve
-sohbette gönderdiğiniz görseller, tahmin edilemez (rastgele üretilmiş)
-adreslerde saklanır ve bu adresi bilen herkes tarafından açılabilir —
-uygulamanın kendisi bir profil fotoğrafını paylaşılan profil bağlantılarında
-gösterebilsin diye. Adresler listelenemez; yani bir bağlantıyı paylaşmadığınız
-sürece dosyalarınız üçüncü kişilerce bulunamaz.</p>
+sağlayıcıya gönderilir).</p>
+<p><strong>Profil fotoğraflarına erişim hakkında:</strong> profil
+fotoğraflarınız <strong>herkese açık bir adreste saklanmaz</strong>. Dosyalar
+kapalı bir alanda tutulur ve yalnızca uygulamaya <strong>giriş yapmış</strong>
+bir kullanıcıya, gösterim anında üretilen <strong>süreli bir adresle</strong>
+açılır. Bu adres <strong>1 saat</strong> geçerlidir; süresi dolduğunda
+fotoğrafın yeniden gösterilebilmesi için yeni bir adres üretilmesi gerekir.</p>
+<p>Yeni adresin üretilip üretilemeyeceğine <strong>o an</strong> karar verilir:
+kendi fotoğrafınıza her zaman erişirsiniz; başka bir kullanıcının fotoğrafınızı
+görebilmesi için hem sizin hem onun hesabının aktif olması (silinmemiş, askıya
+alınmamış) ve <strong>aranızda engelleme bulunmaması</strong> gerekir. Yani
+birini engellediğinizde o kişi fotoğrafınız için <strong>yeni adres
+alamaz</strong> — engelleme, erişimi ileriye dönük olarak gerçekten keser.</p>
+<p><strong>Sınırlarını da açıkça yazıyoruz.</strong> Engelleme, karşı tarafa
+daha önce verilmiş bir adresi anında iptal etmez: elindeki adres süresi dolana
+kadar (en çok 1 saat) çalışmaya devam eder. Fotoğrafı daha önce görmüş biri onu
+kendi cihazına kaydetmiş olabilir ve hiçbir teknik önlem o kopyayı geri
+getiremez. Fotoğrafı profilinizden kaldırmanız dosyayı sunucudan da siler; o
+andan sonra fotoğraf için hiçbir adres üretilemez.</p>
 
 <h2>4. Saklama süresi</h2>
 <p>Verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı
-sildiğinizde kişisel verileriniz (profil, fotoğraflar, mesajlar, eşleşmeler,
-bildirimler, push token'ları) derhal ve kalıcı olarak silinir.</p>
+sildiğinizde veritabanındaki kişisel verileriniz (profil, mesajlar,
+eşleşmeler, bildirimler, push token'ları) <strong>anında ve kalıcı olarak</strong>
+silinir. Fotoğraf dosyalarınız da aynı anda silinir; silme sırasında bir ağ ya
+da depolama hatası olursa dosya geride kalabilir ve bu durumda günlük temizlik
+işi onu en geç 24 saat içinde kaldırır. Hesabınız her hâlükârda silinmiş olur
+— dosya temizliği hesabın silinmesini bekletmez.</p>
 <p><strong>Tek istisna — moderasyon kanıtı:</strong> bir fotoğrafınız kural
 ihlali nedeniyle yayından kaldırılırsa, kaldırılan içeriğin bir kopyası
 yalnızca yöneticilerin erişebildiği ayrı bir alanda kanıt olarak saklanır. Bu
@@ -90,7 +104,13 @@ adresine talep gönderin; talebiniz en geç 30 gün içinde sonuçlandırılır.
 <p>SweetMeet 18 yaşından küçüklere yönelik değildir; kayıt sırasında doğum tarihi
 doğrulaması yapılır ve 18 yaş altı kayıtlar reddedilir.</p>
 
-<h2>8. Değişiklikler</h2>
+<h2>8. Çocuk güvenliği</h2>
+<p>Çocukların cinsel istismarı ve sömürüsüne (CSAE) karşı standartlarımız,
+bildirim yolu, müdahale sürecimiz ve sorumlu iletişim noktamız ayrı bir
+sayfada yayımlanmıştır:
+<a href="child-safety.html">Çocuk Güvenliği Standartları</a>.</p>
+
+<h2>9. Değişiklikler</h2>
 <p>Bu politika güncellendiğinde bu sayfada yayımlanır; önemli değişiklikler
 uygulama içinden duyurulur.</p>
 </main>
