@@ -20,7 +20,7 @@
 <body>
 <main>
 <h1>Gizlilik Politikası</h1>
-<div class="updated">Son güncelleme: 19 Kasım 2026</div>
+<div class="updated">Son güncelleme: 25 Kasım 2026</div>
 
 <p>Bu politika, SweetMeet mobil uygulamasını ("Uygulama") kullandığınızda kişisel
 verilerinizin 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili
@@ -31,10 +31,9 @@ Yusuf Alp — <a href="mailto:sweetmtech@gmail.com">sweetmtech@gmail.com</a>.</p
 <ul>
   <li><strong>Hesap bilgileri:</strong> e-posta adresi veya Google hesabı kimliği, kullanıcı adı, ad.</li>
   <li><strong>Profil bilgileri:</strong> doğum tarihi (yaş doğrulaması ve yaş gösterimi için), cinsiyet, fotoğraflar, biyografi, ilgi alanları, boy/eğitim/meslek gibi isteğe bağlı alanlar, isteğe bağlı sosyal medya kullanıcı adları.</li>
-  <li><strong>Müzik zevki verileri:</strong> profilinize eklediğiniz tür/sanatçı/parça bilgileri (eşleşme puanı hesaplamada kullanılır).</li>
   <li><strong>Konum:</strong> izin verirseniz yaklaşık konumunuzdan türetilen <em>il</em> bilgisi ve mesafe filtresi için koordinatlar. İzin vermezseniz il bilginiz belirlenmez: keşif ülke genelindeki profillerle çalışır ve kartınızda il gösterilmez. İl bilginiz, ayarlardan kapatmadığınız sürece keşif kartınızda diğer kullanıcılara gösterilir. Kapatmanız ilin kartta gösterilmesini durdurur; il, eşleştirme bölgesini belirlemek için işlenmeye devam eder.</li>
   <li><strong>Oyun fotoğrafları ve kamera:</strong> "15 Saniyede Bul ve Çek" oyununu oynarsanız uygulama, izin verdiğinizde <strong>yalnızca arka kamerayla</strong> o anki ortamınızdan tek bir kare çeker; galerinize erişilmez. Kare yüklenmeden önce cihazınızda küçültülür ve sunucuda <strong>konum (GPS) dahil tüm EXIF bilgileri silinerek</strong> saklanır. Oyunun kuyruk, oda ve oy kayıtları da (kiminle eşleştiğiniz, görev, sonuç) tutulur.</li>
-  <li><strong>Mesajlar ve etkileşimler:</strong> eşleşmelerinizle yazışmalarınız, beğeni/geçiş kayıtları, profil görüntüleme sayaçları.</li>
+  <li><strong>Mesajlar, sesli mesajlar ve etkileşimler:</strong> eşleşmelerinizle metin yazışmalarınız, tek görüşlük fotoğraflar, mikrofon izni verdiğinizde kaydettiğiniz sesli mesajlar, mesaj ifadeleri ve beğeni/geçiş kayıtları.</li>
   <li><strong>Abonelik verileri:</strong> ücretli üyelik satın alırsanız Google Play'den gelen satın alma kimliği (jeton), üyelik ürününün adı, üyeliğin durumu (etkin / iptal edilmiş / süresi dolmuş) ve bitiş tarihi; ayrıca destek ve teşhis için sipariş numarası ile satın almanın yapıldığı ülke kodu. <strong>Ödeme bilgileriniz bize ulaşmaz:</strong> kart numarası, fatura bilgisi ve ödeme aracı yalnızca Google Play tarafından işlenir; biz yalnızca üyeliğinizin geçerli olup olmadığını öğreniriz.</li>
   <li><strong>Cihaz verileri:</strong> anlık bildirim için cihaz push token'ı; hata ayıklama için çökme kayıtları; ürün geliştirme için anonim kullanım olayları (ör. kayıt adımı tamamlama).</li>
 </ul>
@@ -44,7 +43,7 @@ Yusuf Alp — <a href="mailto:sweetmtech@gmail.com">sweetmtech@gmail.com</a>.</p
 eşleştirme ve keşif özelliklerini sunmak (sözleşmenin ifası), güvenliği
 sağlamak — şikayet/engelleme dahil (meşru menfaat), bildirim göndermek
 (sözleşmenin ifası) ve uygulamayı iyileştirmek (meşru menfaat) amaçlarıyla
-işlenir. Konum verisi yalnızca açık izninizle işlenir. Ücretli üyelik satın
+işlenir. Konum ve mikrofon verileri yalnızca açık izninizle işlenir. Ücretli üyelik satın
 alırsanız abonelik verileriniz üyeliğin sağlanması, doğrulanması ve
 sürdürülmesi amacıyla (sözleşmenin ifası) işlenir.</p>
 
@@ -70,12 +69,13 @@ kimliği doğrulanmış geçidinden gösterilir.</p>
 <p><strong>Ücretli üyelik, Google Play ve RevenueCat:</strong> üyelik satın
 aldığınızda ödeme işlemini <strong>Google Play</strong> yürütür; abonelik
 durumu ve satın alma doğrulaması <strong>RevenueCat</strong> altyapısı üzerinden
-yönetilir. Satın almanın hesabınızla eşleştirilmesi için RevenueCat'e teknik
-kullanıcı kimliğiniz (UUID) ve satın alma bilgileri iletilir; kart veya fatura
-bilgileriniz bize ya da RevenueCat'e ulaşmaz. Üyeliğinizin yenilenmesi, iptali,
-ödeme sorunu ya da iadesi hâlinde RevenueCat sunucumuza bildirim gönderir ve
-kaydınız buna göre güncellenir. Google'ın ve RevenueCat'in kendi gizlilik
-politikaları bu işlem için ayrıca geçerlidir.</p>
+yönetilir. Satın almanın hesabınızla eşleştirilmesi için RevenueCat'e ham
+kullanıcı kimliğiniz yerine <strong>tek yönlü kriptografik özeti (SHA-256 hash)</strong>
+ve satın alma bilgileri iletilir; kart veya fatura bilgileriniz bize ya da
+RevenueCat'e ulaşmaz. Üyeliğinizin yenilenmesi, iptali, ödeme sorunu ya da
+iadesi hâlinde RevenueCat sunucumuza bildirim gönderir ve kaydınız buna göre
+güncellenir. Google'ın ve RevenueCat'in kendi gizlilik politikaları bu işlem
+için ayrıca geçerlidir.</p>
 
 <p><strong>Profil fotoğraflarına erişim hakkında:</strong> profil
 fotoğraflarınız <strong>herkese açık bir adreste saklanmaz</strong>. Dosyalar
@@ -110,6 +110,13 @@ Google Play'in kendi satın alma ve fatura kayıtları bizde değildir ve bizim
 silmemizle ortadan kalkmaz. <strong>Önemli:</strong> hesabınızı silmek
 üyeliğinizi İPTAL ETMEZ — yenilenmeyi durdurmak için aboneliği hesabınızı
 silmeden önce Google Play üzerinden iptal etmelisiniz (bkz. bölüm 6).</p>
+
+<p><strong>Sesli mesajlar ve tek görüşlük fotoğraflar:</strong> tek görüşlük
+fotoğraflar karşı taraf açtığı anda sunucudan silinir. Sesli mesaj kayıtları
+kapalı bir alanda tutulur, <strong>90 gün</strong> sonunda erişime kapatılır ve
+günlük temizlik işiyle sunucudan silinir; mesajı herkesten sildiğinizde,
+eşleşme sonlandığında veya hesabınızı sildiğinizde ses kaydı bu süreyi
+beklemeden kaldırılır.</p>
 
 <p><strong>Oyun fotoğrafları:</strong> eşleşmeyle bitmeyen bir oyunun kareleri
 oda kapandıktan sonra <strong>en geç 1 saat içinde</strong> silinir. Eşleşmeyle
